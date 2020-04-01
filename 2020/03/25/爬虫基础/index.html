@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Hello world</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">John Doe's Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">爬虫基础</h2>
+            <div class="post-meta">
+                <span class="post-time">2020-03-25</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP基本原理"><span class="toc-text">HTTP基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#URL（统一资源定位器）-URI"><span class="toc-text">URL（统一资源定位器） URI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超文本-网络的源代码HTML就可以称作超文本"><span class="toc-text">超文本 网络的源代码HTML就可以称作超文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP和HTTPS"><span class="toc-text">HTTP和HTTPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP请求过程"><span class="toc-text">HTTP请求过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求"><span class="toc-text">请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-请求方法-method"><span class="toc-text">1 请求方法 method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-请求的网址"><span class="toc-text">2 请求的网址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-请求头"><span class="toc-text">3 请求头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-请求体"><span class="toc-text">4 请求体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应"><span class="toc-text">响应</span></a></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="HTTP基本原理"><a href="#HTTP基本原理" class="headerlink" title="HTTP基本原理"></a>HTTP基本原理</h1><h2 id="URL（统一资源定位器）-URI"><a href="#URL（统一资源定位器）-URI" class="headerlink" title="URL（统一资源定位器） URI"></a>URL（统一资源定位器） URI</h2><h2 id="超文本-网络的源代码HTML就可以称作超文本"><a href="#超文本-网络的源代码HTML就可以称作超文本" class="headerlink" title="超文本 网络的源代码HTML就可以称作超文本"></a>超文本 网络的源代码HTML就可以称作超文本</h2><h2 id="HTTP和HTTPS"><a href="#HTTP和HTTPS" class="headerlink" title="HTTP和HTTPS"></a>HTTP和HTTPS</h2><h2 id="HTTP请求过程"><a href="#HTTP请求过程" class="headerlink" title="HTTP请求过程"></a>HTTP请求过程</h2><h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><pre><code>* Request Method
+* Request URL
+* Request Headers
+* Request Body</code></pre><h3 id="1-请求方法-method"><a href="#1-请求方法-method" class="headerlink" title="1 请求方法 method"></a>1 请求方法 method</h3><pre><code>* GET
+* POST</code></pre><h3 id="2-请求的网址"><a href="#2-请求的网址" class="headerlink" title="2 请求的网址"></a>2 请求的网址</h3><pre><code>* URL</code></pre><h3 id="3-请求头"><a href="#3-请求头" class="headerlink" title="3 请求头"></a>3 请求头</h3><pre><code>* Accept
+* Accept-Language
+* Accept-Encoding
+* Host
+* Cookie
+* Referer
+* User-Agent
+* Content-Type</code></pre><h3 id="4-请求体"><a href="#4-请求体" class="headerlink" title="4 请求体"></a>4 请求体</h3><h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2>
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2020/04/01/%E4%BD%9C%E4%B8%9A4%EF%BC%9A%E5%BF%85%E5%BA%94%E5%A3%81%E7%BA%B8/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">作业4：必应壁纸</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2020/03/25/Hello%20World/">
+                <span class="nav-default">Hello World</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2020
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">John Doe</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>
